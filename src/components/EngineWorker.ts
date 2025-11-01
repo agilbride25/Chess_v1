@@ -19,21 +19,21 @@ export class StockfishClient {
   private listeners: Array<(s: string) => void> = [];
 
   constructor() {
-    // Lazy-load the worker factory from the 'stockfish' package in the browser.
+    // Load Stockfish from /public to avoid Turbopack resolution issues.
     this.workerPromise = (async () => {
-      const mod: any = await import('stockfish'); // mod.default() returns a Worker-like engine
-      const worker: Worker = mod.default();
+    // Use the "single" build so the worker fetches its own WASM parts by relative path
+    const worker = new Worker('/stockfish/stockfish-17.1-single-a496a04.js', {
+        type: 'classic', // stockfish is a classic (non-module) worker script
+    });
 
-      // Fan out engine output to all listeners
-      worker.onmessage = (e: MessageEvent<string>) => {
+    worker.onmessage = (e: MessageEvent<string>) => {
         const line = e.data;
         for (const fn of this.listeners) fn(line);
-      };
+    };
 
-      // Basic init
-      worker.postMessage('uci');
-      worker.postMessage('isready');
-      return worker;
+    worker.postMessage('uci');
+    worker.postMessage('isready');
+    return worker;
     })();
   }
 
