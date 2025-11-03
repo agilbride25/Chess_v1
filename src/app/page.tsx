@@ -24,8 +24,8 @@ export default function Home() {
               <a href="#faq" className="hover:text-white">FAQ</a>
             </nav>
             <div className="flex items-center gap-3">
-              <Link href="/app" className="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm hover:bg-white/10">Open App</Link>
-              <a href="#cta" className="rounded-xl bg-fuchsia-500 px-4 py-2 text-sm font-semibold text-violet-950 hover:bg-fuchsia-400">Start free</a>
+              <Link href="/app" className="rounded-2xl bg-zinc-800/60 px-4 py-2 text-sm font-medium text-white shadow-lg shadow-black/30 border border-white/10 hover:bg-zinc-700/60">Open App</Link>
+              <a href="#cta" className="rounded-2xl bg-zinc-800/60 px-4 py-2 text-sm font-medium text-white shadow-lg shadow-black/30 border border-white/10 hover:bg-zinc-700/60">Start free</a>
             </div>
           </div>
         </div>
@@ -37,7 +37,8 @@ export default function Home() {
           <div className="mx-auto mt-[-6rem] h-[28rem] w-[28rem] rounded-full bg-fuchsia-500/20 blur-3xl" />
         </div>
         <div className="mx-auto max-w-7xl px-4 py-20 sm:py-28">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="grid items-center gap-10 md:grid-cols-2">
+            <div className="mx-auto max-w-2xl text-center md:text-left">
             <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-violet-200/80">
               <span className="inline-block h-2 w-2 rounded-full bg-fuchsia-400" /> Personal chess trainer
             </p>
@@ -47,11 +48,20 @@ export default function Home() {
             <p className="mt-5 text-lg text-violet-200/80">
               Play, reflect, and improve with an AI coach that understands your thought process—then serves targeted puzzles to fix blind spots.
             </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a href="#cta" className="rounded-2xl bg-fuchsia-500 px-6 py-3 font-semibold text-violet-950 hover:bg-fuchsia-400">Take a rating test</a>
-              <Link href="/app" className="rounded-2xl border border-white/10 bg-white/5 px-6 py-3 hover:bg-white/10">Try a demo</Link>
+            <div className="mt-8 flex flex-col items-center justify-start gap-3 sm:flex-row md:justify-start">
+              <a href="#cta" className="rounded-2xl bg-zinc-800/60 px-6 py-3 font-medium text-white shadow-lg shadow-black/30 border border-white/10 hover:bg-zinc-700/60">Take a rating test</a>
+              <Link href="/app" className="rounded-2xl bg-zinc-800/60 px-6 py-3 font-medium text-white shadow-lg shadow-black/30 border border-white/10 hover:bg-zinc-700/60">Try a demo</Link>
             </div>
             <p className="mt-6 text-sm text-violet-300/60">Join players learning smarter—no engine rage, just real progress.</p>
+            </div>
+            {/* Hero image dropzone */}
+            <div>
+              <div className="aspect-[16/10] w-full rounded-2xl border-2 border-dashed border-white/15 bg-white/5 p-4">
+                <div className="h-full w-full rounded-xl border border-white/10 bg-gradient-to-br from-indigo-500/5 to-fuchsia-500/5 grid place-items-center text-violet-300/70 text-sm">
+                  Hero image placeholder
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Board preview placeholder */}
@@ -68,6 +78,9 @@ export default function Home() {
       {/* Social proof / value */}
       <section className="border-y border-white/10 bg-black/30">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:py-14">
+          <div className="mb-6">
+            <div className="aspect-[16/9] w-full rounded-2xl border-2 border-dashed border-white/15 bg-white/5 grid place-items-center text-violet-300/70 text-sm">Section image placeholder</div>
+          </div>
           <div className="grid grid-cols-1 gap-6 text-center sm:grid-cols-3">
             <div>
               <p className="text-3xl font-semibold">Human‑style play</p>
@@ -86,10 +99,13 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section id="features" className="mx-auto max-w-7xl px-4 py-20">
+      <section id="features" className="mx-auto max-w-7xl px-4 py-20 border-t border-white/10">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Everything you need to improve</h2>
           <p className="mt-3 text-violet-200/80">From first move to insights after the game.</p>
+        </div>
+        <div className="mt-8">
+          <div className="aspect-[16/9] w-full rounded-2xl border-2 border-dashed border-white/15 bg-white/5 grid place-items-center text-violet-300/70 text-sm">Features section image placeholder</div>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -120,6 +136,7 @@ export default function Home() {
             },
           ].map((f) => (
             <div key={f.title} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="mb-4 h-28 rounded-xl border-2 border-dashed border-white/15 bg-black/10 grid place-items-center text-xs text-violet-300/70">Card image</div>
               <div className="mb-3 text-xl font-semibold">{f.title}</div>
               <p className="text-sm text-violet-200/80">{f.desc}</p>
             </div>
@@ -128,10 +145,13 @@ export default function Home() {
       </section>
 
       {/* How it works */}
-      <section id="how" className="mx-auto max-w-7xl px-4 pb-20">
+      <section id="how" className="mx-auto max-w-7xl px-4 pb-20 border-t border-white/10">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">How it works</h2>
           <p className="mt-3 text-violet-200/80">Simple flow from play → reflect → practice.</p>
+        </div>
+        <div className="mt-8">
+          <div className="aspect-[16/9] w-full rounded-2xl border-2 border-dashed border-white/15 bg-white/5 grid place-items-center text-violet-300/70 text-sm">How it works section image placeholder</div>
         </div>
         <ol className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
           {[
@@ -152,6 +172,7 @@ export default function Home() {
             },
           ].map((s) => (
             <li key={s.step} className="relative rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="mb-4 h-24 rounded-xl border-2 border-dashed border-white/15 bg-black/10 grid place-items-center text-xs text-violet-300/70">Step image</div>
               <span className="absolute -top-3 left-6 inline-flex h-8 w-8 items-center justify-center rounded-full bg-fuchsia-500 font-bold text-violet-950">
                 {s.step}
               </span>
@@ -163,7 +184,7 @@ export default function Home() {
       </section>
 
       {/* Integrations */}
-      <section id="integrations" className="mx-auto max-w-7xl px-4 pb-20">
+      <section id="integrations" className="mx-auto max-w-7xl px-4 pb-20 border-t border-white/10">
         <div className="grid items-center gap-10 md:grid-cols-2">
           <div>
           <h3 className="text-2xl font-semibold">Connect your chess.com</h3>
@@ -171,7 +192,7 @@ export default function Home() {
               Import recent games, follow your rating trend, and let the coach tailor drills to your real weaknesses.
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-3">
-              <button className="rounded-xl bg-white px-4 py-2 font-medium text-violet-900 hover:bg-violet-50">Sign in with chess.com</button>
+              <button className="rounded-2xl bg-zinc-800/60 px-4 py-2 font-medium text-white shadow-lg shadow-black/30 border border-white/10 hover:bg-zinc-700/60">Sign in with chess.com</button>
               <span className="text-xs text-violet-300/60">Coming soon</span>
             </div>
           </div>
@@ -183,7 +204,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="mx-auto max-w-5xl px-4 pb-24">
+      <section id="faq" className="mx-auto max-w-5xl px-4 pb-24 border-t border-white/10">
         <h3 className="text-2xl font-semibold">FAQ</h3>
         <div className="mt-6 divide-y divide-white/10 rounded-2xl border border-white/10 bg-white/5">
           {[
@@ -210,8 +231,8 @@ export default function Home() {
             Start with a quick rating test and a guided game review. We’ll build your first tactic deck from real mistakes.
           </p>
           <div className="mt-6 flex items-center justify-center gap-3">
-            <a href="/app" className="rounded-2xl bg-fuchsia-500 px-6 py-3 font-semibold text-violet-950 hover:bg-fuchsia-400">Open the demo</a>
-            <a href="#features" className="rounded-2xl border border-white/10 bg-white/5 px-6 py-3 hover:bg-white/10">Explore features</a>
+            <a href="/app" className="rounded-2xl bg-zinc-800/60 px-6 py-3 font-medium text-white shadow-lg shadow-black/30 border border-white/10 hover:bg-zinc-700/60">Open the demo</a>
+            <a href="#features" className="rounded-2xl bg-zinc-800/60 px-6 py-3 font-medium text-white shadow-lg shadow-black/30 border border-white/10 hover:bg-zinc-700/60">Explore features</a>
           </div>
           <p className="mt-4 text-xs text-violet-300/60">No account needed for the demo.</p>
         </div>
